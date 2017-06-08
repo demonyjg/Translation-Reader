@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <script type="application/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/register.css"/>
+
+    <script language=javascript>
+
+        function register() {
+            var password = $("input[name='password']").val();
+            var passwordAgain = $("input[name='passwordAgain']").val();
+            if(!document.regis.username.value) {
+                alert("请输入用户名！");
+                document.regis.username.focus();
+            }
+            if (password == passwordAgain) {
+                alert("注册成功！")
+            }
+            else {
+                alert("两次输入密码不同，请重新输入！")
+            }
+            window.open("login.html");
+        }
+
+
+    </script>
+
+</head>
+<body>
+<div id="register">
+    <h1>register</h1>
+    <form method="post" id="regis" name="regis" action="register.html">
+        <input type="text" required="required" placeholder="用户名" name="username"/>
+        <input type="password" required="required" placeholder="密码" name="password"/>
+        <input type="password" required="required" placeholder="确认密码" name="passwordAgain"/>
+        <button class="but" type="submit" onclick="register()">注册</button>
+    </form>
+    <p>已有账号？<a onclick="javascript:window.open('login.html')">登录</a></p>
+</div>
+</body>
+</html>

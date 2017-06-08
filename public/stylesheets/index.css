@@ -1,0 +1,283 @@
+/*	body{
+		position: absolute;
+		z-index: 0;
+	}*/
+body{
+    /*background-color: #D6F1F1;*/
+    /*background-color: rgba(236,210,242,0.3);*/
+    /*background-color: #fff;*/
+    background-image: url("/images/timg3.png");
+    /*opacity: 10%;
+    filter:Alpha(opacity=10);
+    position: static;*/
+}
+/*body div{
+    position: relative;
+}*/
+#header{
+    height:60px;
+    width: 100%;
+    /*background-color: white;*/
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 20pt;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+#content{
+    width: 100%;
+    height: 528px;
+}
+#left{
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+#right{
+    float: right;
+    width: 25%;
+    height: 100%;
+    /*background-color: white;*/
+    /*		border-left: 1px black solid;*/
+    margin-top: 2%;
+    border: 1px solid #696;
+    border-radius: 20px;
+    box-shadow: #666 0px 0px 7px;
+    background-color: rgba(150,233,185,0.15);
+}
+#right:hover{
+    background-color: rgba(150,233,185,0.4);
+}
+#right p{
+    padding-left: 35%;
+    padding-top: 15%;
+}
+.rbut input{
+    width: 100px;
+    height: 30px;
+}
+#right .rtext a{
+    padding-left: 30%;
+}
+#top{
+    width: 100%;
+    height: 55%;
+    background-color: rgba(121,117,204,0.1);
+    border-radius: 30px;
+    margin: 2% 0;
+    border: 1px solid #696;
+    border-radius: 20px;
+    box-shadow: #666 0px 0px 3px;
+}
+#text{
+    padding-top: 10%;
+    /*padding-left: 20%;*/
+
+}
+textarea{
+    height: 100px;
+    width: 30%;
+    max-height: 100px;
+    max-width: 30%;
+    font-size: 15pt;
+    border-radius: 5px;
+}
+textarea:not(:last-child){
+    margin-right: 7%;
+    margin-left: 6%;
+}
+textarea:not(:first-child){
+    margin-left: 7%;
+    margin-right: 6%;
+}
+#text img{
+    width:50px;
+    height: 50px;
+    padding-bottom: 3%;
+}
+#bottom{
+    width: 100%;
+    height: 45%;
+    /*background-color: white;*/
+    /*	border-top: 1px solid black;*/
+    /*	border-radius: 30px;*/
+}
+#bleft,#bright{
+    width: 45%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(150,194,243,0.15);
+    /*padding-top: 5%;*/
+    border: 1px solid #696;
+    border-radius: 20px;
+    box-shadow: #666 0px 0px 10px;
+}
+#bright{
+    background-color: rgba(248,182,194,0.15);
+}
+#bleft:hover{
+    background-color: rgba(150,194,243,0.5);
+    box-shadow: #666 0px 0px 8px inset;
+}
+#bright:hover{
+    background-color:rgba(248,182,194,0.5);
+    box-shadow: #666 0px 0px 8px inset;
+}
+#xttj,#yhtj{
+    height: 100%;
+    width: 50%;
+    float: left;
+    /*text-align: center;*/
+    background-color: rgba(112,145,220,1);
+    border-radius: 20px 0 0 20px;
+
+}
+#yhtj{
+    background-color: rgba(192,137,197,1);
+}
+#xttj span,#yhtj span{
+    display: inline-block;
+    padding-left: 40%;
+    padding-top: 50%;
+}
+#xtfy,#yhfy{
+    height: 100%;
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding-top: 10%;
+}
+/*	#yhtj{
+		height: 100%;
+		width: 50%;
+		float: left;
+		text-align: center;
+		background-color:rgba(192,137,197,1);
+	}*/
+#bleft p,#bright p{
+    padding-bottom: 5%;
+}
+#bleft p:hover,#bright p:hover{
+    text-shadow: 1px 1px 1px rgba(255,0,255,0.5);
+    color: rgba(0,0,0,0.3);
+}
+/*	#msg{
+		float: right;
+	}
+	#menu,#user,#logout{
+		height: 30px;
+		width: 60px;
+		margin: -5px 20px 5px 0;
+	}
+	#nav{
+		position: absolute;
+		z-index: 1;
+		width: 60px;
+		font-size: 12pt;
+		text-align: center;
+		font-weight: normal;
+		background-color: gray;
+		margin-top: -7px;
+		display: none;
+	}
+	#nav p{
+		margin: 0;
+		border-bottom: 1px solid black;
+	}*/
+.mynav{
+    float: right;
+    height: 60px;
+}
+.mynav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 60px;
+}
+
+.mynav li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.mynav a {
+    display: block;
+    font-size: 20px;
+    font-family:Arial,Verdana,Sans-serif;
+    color: black;
+    text-decoration: none;
+    /*padding: 7px 15px;*/
+}
+
+.target {
+    position: absolute;
+    border-bottom: 4px solid transparent;
+    z-index: -1;
+    -webkit-transform: translateX(-60px);
+    transform: translateX(-60px);
+}
+
+.mynav a,
+.target {
+    -webkit-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+.demo{width:100%; margin:20px auto 0 auto; height:70px;}
+.button {
+    /*display: inline-block;*/
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+    text-decoration: none;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+.white {
+    color: #606060;
+    border: solid 1px #b7b7b7;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top,  #fff,  #ededed);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+.white:hover {
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+    background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+.white:active {
+    color: #999;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+    background: -moz-linear-gradient(top,  #ededed,  #fff);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+}
+.rtext a{
+    color: rgba(128,0,128,0.3);
+    text-decoration: none;
+}
+.rtext a:hover{
+    color: rgba(128,0,128,1);
+    text-decoration: underline;
+}

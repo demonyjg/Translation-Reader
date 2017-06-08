@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>划词翻译网页阅读器</title>
+    <script type="text/javascript" src="/controllers/index.client.controller.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+
+            console.log(document.getElementById('trans').value);
+            document.getElementById('tran').value = document.getElementById('trans').value;
+            console.log(document.getElementById('tranOriginal').value);
+            document.getElementById('transOriginal').value = document.getElementById('tranOriginal').value;
+        };
+
+        function tjtextarea() {
+            var item = $(":radio:checked");
+            var len = item.length;
+            var a;
+            var b = document.getElementById('trans');
+            if (len > 0) {
+                a = $(":radio:checked").next().html();
+                b.innerHTML = a;
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/stylesheets/index.css" type="text/css">
+</head>
+<body ng-app="">
+<div id="header">
+    <!-- 	划词翻译网页阅读器&#8595 -->
+    <img src="/images/标题.png">
+    <!-- <div id="msg">
+
+        <input type="button" name="" value="菜单" id="menu" onclick="showmenu()">
+        <div id="nav" onmouseleave="hidemenu()">
+            <p onclick="showtrans()">翻译</p>
+            <p onclick="shownote()">笔记本</p>
+            <p onclick="">生词本</p>
+        </div>
+        <input type="button" name="" value="用户名" id="user" onclick="javascript:window.open('register.html')">
+        <input type="button" name="" value="注销" id="logout" onclick="">
+    </div> -->
+
+    <nav class="mynav">
+        <ul>
+            <li><a href="http://www.baidu.com/">菜单</a></li>
+            <li><a>用户名</a></li>
+            <li><a onclick="javascript:window.open('login.html')" style="opacity: 1;">注销</a></li>
+
+        </ul>
+    </nav>
+
+
+    <span class="target"></span>
+
+
+</div>
+
+<div id="content">
+    <div id="left">
+        <div id="top">
+            <div id="text">
+                <textarea id='tranOriginal '><%=tranOriginal%></textarea>
+                <img src="/images/有道.png" id="youdao" onclick="chgimgb()">
+                <img src="/images/百度.png" id="baidu" style="display: none;" onclick="chgimgy()">
+                <textarea id='trans'><%=tranTranslation%></textarea>
+            </div>
+        </div>
+        <div id="bottom">
+            <div id="bleft" style="float: left;">
+                <div id="xttj"><span>系统推荐：</span></div>
+                <div id="xtfy">
+                    <p><input onclick="tjtextarea()" type="radio" name="fy" id="fy1"><label for="fy1"><%= fy1%></label>
+                    </p>
+                    <p><input onclick="tjtextarea()" type="radio" name="fy" id="fy2"><label for="fy2"><%= fy2%></label>
+                    </p>
+                    <p><input onclick="tjtextarea()" type="radio" name="fy" id="fy3"><label for="fy3"><%= fy3%></label>
+                    </p>
+                </div>
+            </div>
+            <div id="bright" style="float: right;">
+                <div id="yhtj"><span>用户推荐：</span></div>
+                <div id="yhfy">
+                    <p><input type="radio" onclick="tjtextarea()" name="fy" id="yh0"><label for="yh0">翻译一</label></p>
+                    <p><input type="radio" onclick="tjtextarea()" name="fy" id="yh1"><label for="yh1">翻译二</label></p>
+                    <p><input type="radio" onclick="tjtextarea()" name="fy" id="yh2"><label for="yh2">翻译三</label></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 	<div id="right">
+            <p class="rbut"><input type="button" name="" value="加入笔记本"></p>
+            <p class="rtext"><a href="text.html">查看我的笔记本</a></p>
+            <p class="rbut"><input type="button" name="" value="提交"></p>
+            <p class="rbut"><input type="button" name="" value="加入生词本"></p>
+            <p class="rtext"><a href="newword.html">查看我的生词本</a></p>
+        </div> -->
+    <div id="right">
+        <div class="demo">
+            <form action="notebook" method="post">
+                <div class="form-control" style="display: none">
+
+                    <input type="text" name="tran1" id='tran1'/>
+                </div>
+                <p>
+                    <button class="button white" type="submit">加入笔记本</button>
+                </p>
+            </form>
+            <p class="rtext" style="padding-top: 3%;"><a href="text.html">查看我的笔记本</a></p>
+
+            <form action="submit" method="post">
+                <div class="form-control" style="display: none">
+
+                    <input type="text" name="transOriginal" id='transOriginal'/>
+                    <!--<input type="text" name="URL" id='URL'/>-->
+                    <input type="text" name="tran" id='tran'/>
+                </div>
+                <p>
+                    <button class="button white" type="submit">提交</button>
+                </p>
+            </form>
+            <form action="newWords" method="post">
+                <div class="form-control" style="display: none">
+
+                    <input type="text" name="tran2" id='tran2'/>
+                </div>
+                <p>
+                    <button class="button white" type="submit">加入生词本</button>
+                </p>
+            </form>
+
+
+            <p class="rtext" style="padding-top: 3%;"><a href="newword.html">查看我的生词本</a></p>
+        </div>
+    </div>
+    <!-- 	<div class="middle" id="notemenu" style="display: none;">
+            <p style="font-size: 20pt;font-weight: bold;margin: 50px;">笔记本</p>
+            <div style="width: 594px;">
+            <p style="margin-left: 20px;margin-bottom: 30px;"><input type="radio" name="note" id="note1"><label for="note1">笔记1</label></p>
+            <p style="margin-left: 40px;margin-bottom: 30px;"><input type="radio" name="note" id="note2"><label for="note2">笔记2</label></p>
+            <p style="margin-left: 60px;margin-bottom: 30px;"><input type="radio" name="note" id="note3"><label for="note3">笔记3</label></p>
+            <p style="margin-left: 80px;margin-bottom: 30px;"><input type="radio" name="note" id="note4"><label for="note4">笔记4</label></p>
+            <p style="margin-left: 100px;margin-bottom: 30px;"><input type="radio" name="note" id="note5"><label for="note5">笔记5</label></p>
+            </div>
+            <p style="display:block;padding: 30px;">
+                <input type="button" name="" value="查看翻译" style="margin-right: 20px;">
+                <input type="button" name="" value="下一页">
+            </p>
+        </div>
+     -->
+</div>
+
+<script type="text/javascript" src="/controllers/index.client.controller2.js"></script>
+
+</body>
+</html>

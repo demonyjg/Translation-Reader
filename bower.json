@@ -1,0 +1,22 @@
+{
+  "name": "Translation-Reader",
+  "description": "",
+  "main": "",
+  "authors": [
+    "pyxsqbs <pyxsqbs@163.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SoftwareEngineeringCourseDesign/Translation-Reader",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.4",
+    "js-md5": "md5#^0.4.2"
+  }
+}
